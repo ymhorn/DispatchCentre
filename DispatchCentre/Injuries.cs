@@ -10,5 +10,30 @@ namespace DispatchCentre
     {
         public Injuries(string name, string region, bool available) : base(name, region, available)
         { }
+
+        public override bool CanHelp()
+        {
+            if (Available == true)
+            {
+                Available = false;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override void Report()
+        {
+            if (CanHelp() == true)
+            {
+                Console.WriteLine("available");
+            }
+            else
+            {
+                Console.WriteLine("not available");
+            }
+        }
     }
 }

@@ -18,5 +18,15 @@ namespace DispatchCentre
             this.Region = region;
             this.Available = available;
         }
+
+        public virtual bool CanHelp()
+        {
+            return false;
+        }
+
+        public virtual void Report()
+        {
+            Console.WriteLine("Cannot respond");
+        }
     }
 }
