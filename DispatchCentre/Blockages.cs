@@ -8,5 +8,8 @@ namespace DispatchCentre
 {
     internal class Blockages : EmergencyTeam
     {
+        public Blockages(string name, string region, bool available) : base(name, region, available)
+        { }
+
     }
 }

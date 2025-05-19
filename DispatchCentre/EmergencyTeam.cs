@@ -10,6 +10,13 @@ namespace DispatchCentre
     {
         public string Name;
         public string Region;
-        public bool available;
+        public bool Available;
+
+        public EmergencyTeam(string name, string region, bool available)
+        {
+            this.Name = name;
+            this.Region = region;
+            this.Available = available;
+        }
     }
 }

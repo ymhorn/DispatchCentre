@@ -8,5 +8,7 @@ namespace DispatchCentre
 {
     internal class Injuries : EmergencyTeam
     {
+        public Injuries(string name, string region, bool available) : base(name, region, available)
+        { }
     }
 }
