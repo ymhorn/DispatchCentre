@@ -15,7 +15,6 @@ namespace DispatchCentre
         {
             if (Available == true)
             {
-                Available = false;
                 return true;
             }
             else

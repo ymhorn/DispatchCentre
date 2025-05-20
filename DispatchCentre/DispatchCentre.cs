@@ -19,26 +19,17 @@ namespace DispatchCentre
         public void Report(EmergencyReport report)
         {
 
-            bool helpAvailable = false;
             foreach (EmergencyTeam team in Teams)
             {
-                if (team.Available != true)
-                {
-                    continue;
-                }
                 if (team.Region != report.AreaOfCity)
                 {
                     continue;
                 }
-                Console.WriteLine($"Team {team.Name} was sent out to" +
-                    $"the {report.TypeofIncident} in {report.AreaOfCity} ");
-                team.Available = false;
-                helpAvailable = true;
-                break;
-            }
-            if (!helpAvailable)
-            {
-                Console.WriteLine("No one available");
+                if (team.CanHelp())
+                {
+                    team.Report();
+                    team.Available = false;
+                }
             }
         }
 
